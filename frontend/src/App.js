@@ -5,13 +5,13 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import Navbar from './components/NavBar';
 import AddWorkout from './components/AddWorkout';
-import Logout from './components/Logout';
+// import Logout from './components/Logout';
 // import DeleteWorkout from './components/DeleteWorkout';
 // import EditWorkout from './components/EditWorkout';
 import ViewWorkout from './components/ViewWorkout';
 import About from './components/About'
 import Contact from './components/Contact'
-import Dashboard from './components/Dashboard';
+// import Dashboard from './components/Dashboard';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import UserDetailsPage from './components/UserDetailsPage';
@@ -30,7 +30,7 @@ function App() {
           <Route path="/view-workout" element={<ViewWorkout />} />
           <Route path="/add-workout" element={<AddWorkout />} />
           {/* <Route path ="/dashboard" element={<Dashboard />} /> */}
-          <Route path="/logout" element={<Logout />}/>
+          {/* <Route path="/logout" element={<Logout />}/> */}
           <Route path ="/user" element={<UserDetailsPage />} />
         </Routes>
       </>
