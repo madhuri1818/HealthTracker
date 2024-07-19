@@ -1,80 +1,60 @@
-import React, { useState } from 'react';
-import Navbar from './NavBar';
-import backgroundImage from './bg.jpg'; // Replace with your background image path
-
+import React from 'react';
+import contactImage from './contact.jpg'; 
+import NavBar from './NavBar';
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission (e.g., send data to server)
-    console.log('Form submitted:', formData);
-    // Reset form
-    setFormData({ name: '', email: '', message: '' });
-  };
-
   return (
-    <div 
-      className="bg-cover bg-center min-h-screen flex flex-col" 
-      style={{ backgroundImage: `url(${backgroundImage})` }}
-    >
-      <Navbar />
-      <div className="flex-grow flex items-center justify-center">
-        <div className="bg-white shadow-md rounded-lg p-8 max-w-2xl mx-auto bg-opacity-90">
-          <h1 className="text-3xl font-bold mb-4">Contact Us</h1>
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div>
-              <label className="block text-gray-700 font-medium mb-1" htmlFor="name">Name:</label>
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200"
-              />
-            </div>
-            <div>
-              <label className="block text-gray-700 font-medium mb-1" htmlFor="email">Email:</label>
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200"
-              />
-            </div>
-            <div>
-              <label className="block text-gray-700 font-medium mb-1" htmlFor="message">Message:</label>
-              <textarea
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200"
-                rows="4"
-              />
-            </div>
-            <button
-              type="submit"
-              className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300"
-            >
-              Submit
-            </button>
-          </form>
+    <>
+    <NavBar/>
+    <div className="bg-gray-100 min-h-screen flex items-center justify-center">
+      <div className="max-w-7xl mx-auto p-8">
+        <div className="flex flex-col md:flex-row bg-white shadow-md rounded-lg overflow-hidden">
+          <div className="md:w-1/2 flex justify-center items-center bg-blue-600">
+            <img src={contactImage} alt="Contact Us" className="object-cover w-full h-full" />
+          </div>
+          <div className="md:w-1/2 p-8">
+            <h2 className="text-3xl font-semibold text-gray-800 mb-4">Contact Us</h2>
+            <p className="text-gray-600 mb-4">
+              We would love to hear from you! If you have any questions, suggestions, or feedback, please reach out to us. 
+              Our team is here to assist you with anything you need.
+            </p>
+            <form className="space-y-4">
+              <div>
+                <label className="block text-gray-700">Name</label>
+                <input 
+                  type="text" 
+                  className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
+                  placeholder="Your Name"
+                />
+              </div>
+              <div>
+                <label className="block text-gray-700">Email</label>
+                <input 
+                  type="email" 
+                  className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
+                  placeholder="Your Email"
+                />
+              </div>
+              <div>
+                <label className="block text-gray-700">Message</label>
+                <textarea 
+                  className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600"
+                  rows="5"
+                  placeholder="Your Message"
+                ></textarea>
+              </div>
+              <button 
+                type="submit" 
+                className="w-full bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
+    </>
   );
-};
+}
 
 export default Contact;
