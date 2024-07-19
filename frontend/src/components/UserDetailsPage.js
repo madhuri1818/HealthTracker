@@ -30,34 +30,38 @@ const UserDetailsPage = () => {
   return (
     <>
       <NavBar />
-      <div className="min-h-screen flex items-center justify-center bg-black bg-opacity-50">
-        <div className="absolute inset-0 z-0" style={{ backgroundImage: `url(${bg})`, backgroundSize: 'cover', filter: 'brightness(0.5)' }}></div>
-        <div className="relative z-10 max-w-md w-full mx-auto py-12 px-4 sm:px-6 lg:px-8 rounded-md shadow-lg bg-white bg-opacity-75">
-          <h1 className="text-5xl font-bold mb-12 text-center text-gray-800">User Details</h1>
-          {user && (
-            <div className="p-6 rounded-lg">
-              <div className="flex items-center justify-center mb-6">
-                <img
-                  className="w-32 h-32 rounded-full"
-                  src={`https://ui-avatars.com/api/?name=${user.firstName}+${user.lastName}&background=random&size=128`}
-                  alt={`${user.firstName} ${user.lastName}`}
-                />
-              </div>
-              <div className="text-center">
-                <p className="text-3xl font-semibold mb-4">{user.firstName} {user.lastName}</p>
-                <div className="text-gray-700 text-lg">
-                  <p><span className="font-bold">First Name:</span> <span className="ml-2">{user.firstName}</span></p>
-                  <p><span className="font-bold">Last Name:</span> <span className="ml-2">{user.lastName}</span></p>
-                  <p><span className="font-bold">Email:</span> <span className="ml-2">{user.email}</span></p>
-                  <p><span className="font-bold">Age:</span> <span className="ml-2">{user.age}</span></p>
-                  <p><span className="font-bold">Gender:</span> <span className="ml-2">{user.gender}</span></p>
-                  <p><span className="font-bold">Height:</span> <span className="ml-2">{user.height} cm</span></p>
-                  <p><span className="font-bold">Weight:</span> <span className="ml-2">{user.weight} kg</span></p>
-                  {/* Add more fields as needed */}
+      <div className="relative min-h-screen bg-black bg-opacity-50">
+        <div 
+          className="absolute inset-0 z-0" 
+          style={{ backgroundImage: `url(${bg})`, backgroundSize: 'cover', filter: 'brightness(0.5)' }}
+        ></div>
+        <div className="relative z-10 flex items-center justify-center min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-md w-full mx-auto bg-white bg-opacity-90 rounded-lg shadow-lg">
+            <h1 className="text-4xl font-bold mb-6 text-center text-gray-800 pt-6">User Details</h1>
+            {user && (
+              <div className="p-6">
+                <div className="flex items-center justify-center mb-6">
+                  <img
+                    className="w-32 h-32 rounded-full border-4 border-blue-500 shadow-lg"
+                    src={`https://ui-avatars.com/api/?name=${user.firstName}+${user.lastName}&background=random&size=128`}
+                    alt={`${user.firstName} ${user.lastName}`}
+                  />
+                </div>
+                <div className="text-center">
+                  <p className="text-2xl font-semibold mb-4 text-gray-800">{user.firstName} {user.lastName}</p>
+                  <div className="text-gray-700 text-lg space-y-2">
+                    <p><span className="font-bold">First Name:</span> <span className="ml-2">{user.firstName}</span></p>
+                    <p><span className="font-bold">Last Name:</span> <span className="ml-2">{user.lastName}</span></p>
+                    <p><span className="font-bold">Email:</span> <span className="ml-2">{user.email}</span></p>
+                    <p><span className="font-bold">Age:</span> <span className="ml-2">{user.age}</span></p>
+                    <p><span className="font-bold">Gender:</span> <span className="ml-2">{user.gender}</span></p>
+                    <p><span className="font-bold">Height:</span> <span className="ml-2">{user.height} cm</span></p>
+                    <p><span className="font-bold">Weight:</span> <span className="ml-2">{user.weight} kg</span></p>
+                  </div>
                 </div>
               </div>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </div>
     </>
