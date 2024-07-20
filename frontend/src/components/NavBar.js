@@ -17,7 +17,7 @@ function NavBar() {
       : "text-white rounded hover:bg-blue-500 md:hover:bg-transparent md:hover:text-gray-300 md:p-0";
 
   useEffect(() => {
-    // Close the menu on route change
+    
     setIsMenuOpen(false);
   }, [location.pathname]);
 
