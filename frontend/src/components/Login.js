@@ -13,7 +13,9 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:5000/api/auth/login", { email, password })
+      const response = await axios.post(
+        // "http://localhost:5000/api/auth/login"
+        "https://healthtracker-2.onrender.com/api/auth/login", { email, password })
       localStorage.setItem("userId", response.data.userId)
       console.log(localStorage.getItem("userId"))
       toast.success('Login Success');
@@ -28,9 +30,9 @@ function Login() {
 
   return (
     <div className="min-h-screen flex">
-      {/* Background image section */}
+      
       <div className="hidden lg:block w-1/2 bg-cover bg-center" style={{ backgroundImage: `url(${bg})` }}></div>
-      {/* Login form section */}
+
       <div className="w-full lg:w-1/2 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-md w-full bg-white shadow-md rounded-md p-8">
           <h2 className="text-center text-3xl font-extrabold text-gray-900 mb-6">Login</h2>
@@ -61,7 +63,7 @@ function Login() {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
-            {error && <p className="text-red-500 text-sm">{error}</p>} {/* Display error message if exists */}
+            {error && <p className="text-red-500 text-sm">{error}</p>} 
             <div>
               <button
                 type="submit"
@@ -78,7 +80,7 @@ function Login() {
           </div>
         </div>
       </div>
-      {/* ToastContainer for displaying success message */}
+    
       <ToastContainer position="bottom-right" autoClose={3000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover />
     </div>
   );
