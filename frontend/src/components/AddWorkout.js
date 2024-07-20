@@ -23,7 +23,9 @@ function AddWorkout() {
     e.preventDefault();
     try {
       const userId = localStorage.getItem("userId");
-      await axios.post('http://localhost:5000/api/workouts', {
+      await axios.post(
+        // 'http://localhost:5000/api/workouts'
+        'https://healthtracker-2.onrender.com/api/workouts', {
         userId: userId,
         ...formData
       });
