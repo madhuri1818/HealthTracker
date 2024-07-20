@@ -12,7 +12,9 @@ const UserDetailsPage = () => {
     const fetchUser = async () => {
       try {
         const userId = localStorage.getItem('userId');
-        const response = await axios.get(`http://localhost:5000/api/auth/users/${userId}`);
+        const response = await axios.get(
+          // `http://localhost:5000/api/auth/users/${userId}`
+        `https://healthtracker-2.onrender.com/api/auth/users/${userId}`);
         setUser(response.data); 
       } catch (err) {
         setError(err);
@@ -57,6 +59,7 @@ const UserDetailsPage = () => {
                     <p><span className="font-bold">Gender:</span> <span className="ml-2">{user.gender}</span></p>
                     <p><span className="font-bold">Height:</span> <span className="ml-2">{user.height} cm</span></p>
                     <p><span className="font-bold">Weight:</span> <span className="ml-2">{user.weight} kg</span></p>
+                  
                   </div>
                 </div>
               </div>
