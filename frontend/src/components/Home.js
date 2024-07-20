@@ -13,7 +13,7 @@ function Home() {
         style={{
           backgroundImage: `url(${bg})`,
           backgroundSize: 'cover',
-          filter: 'brightness(0.5)', // Adjust brightness to dim the image
+          filter: 'brightness(0.5)', 
         }}
       />
       <div className="relative z-10 max-w-md w-full py-12 px-4 sm:px-6 lg:px-8 rounded-md shadow-lg bg-white bg-opacity-75">
